@@ -1,0 +1,32 @@
+.nav-bar nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+}
+
+
+.sticky {
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-bar nav h2 {
+  margin: 0;
+  padding: 15px;
+  text-align: center;
+  color: lightcyan;
+  font-size: 24px;
+}
+
+.nav-bar nav a {
+  text-decoration: none;
+}
+
+.nav-bar nav h2:hover {
+  color: lightblue;
+}
