@@ -1,0 +1,12 @@
+11/16/2023
+    - I added generate pokemon for pc and npc.
+
+11/20/2023
+    - I added wildpokemon battle.
+
+11/23/2023
+    - I added npc battle.
+
+11/24/2023 - 11/26/2023
+    - tried to fix a segmentation fault issue
+    - added "B" command and pokemon center logic for healing and revival

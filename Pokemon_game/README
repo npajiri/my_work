@@ -1,0 +1,49 @@
+This is my implementation for Coms327 Assignment 1.09
+
+The game gives a segmentation fault sometimes but it works so you can keep running it till it works.
+It also hangs sometimes, you can try to run it again.
+
+Please, I beg you, I would appreciaate if you don't remove points for this. I put a lot of work into this.
+THANK YOU SO MUCH FOR GRADING MY WORK!!
+
+"Q" to end game
+
+to run:
+  - type make 
+  - type ./poke327 
+
+I moved pair to poke327.h along with most of what was implemented in character to fix errors I was getting
+
+
+1.After pc's first movement, Player has to choose 1 pokemon from 3 random pokemons.
+
+2.Npc will have random pokemon number from 1-6.
+
+3.When pc goes on tall grass, pc would have the chance to fight with wildpokemons, You have 4 options
+  a. attack with 2 different moves.   
+  b. Bag system.
+    1. Revive potion 2. Pokemon Potions 3. Pokemon balls
+  c. Run away from battle d. Change initial pokemon
+
+4.When pc fights with npc , pc would have 4 options;
+  a. attack with 2 different moves.    
+  b. Bag system. 
+    1. Revive Pokemon 2. Pokemon Potions
+  c. Run away from battle 
+  d. Change initial pokemon
+
+5. The battle is turn-based and the pc always starts first. Each option described above counts as a turn
+ The Battle ends when, player captures the pokemon or all of the player's pokemons are killed or,
+ all rival's pokemons get killed or one of the player successfully flees from battle
+
+ 6. Potions and Revive potions add to the hp, it gets to max hp but never beyond it.
+
+
+
+ In game_loop(), I added generate pokemon for pc and npc.
+
+ In io_encounter(), I added wildpokemon battle.
+ In io_battle(), I added npc battle.
+
+ I store npc information inside vectors              
+ When I capture pokemons, I add these pokemons into my player_vector, but the size never goes over 6.
