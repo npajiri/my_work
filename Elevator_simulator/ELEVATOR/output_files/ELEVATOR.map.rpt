@@ -1,0 +1,629 @@
+Analysis & Synthesis report for ELEVATOR
+Fri May  5 23:44:41 2023
+Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: register_file:inst4|reg4b:inst3|register:inst|BUSMUX:inst2
+ 12. Parameter Settings for User Entity Instance: register_file:inst4|reg4b:inst3|register:inst1|BUSMUX:inst2
+ 13. Parameter Settings for User Entity Instance: register_file:inst4|reg4b:inst3|register:inst2|BUSMUX:inst2
+ 14. Parameter Settings for User Entity Instance: register_file:inst4|reg4b:inst3|register:inst3|BUSMUX:inst2
+ 15. Parameter Settings for User Entity Instance: register_file:inst4|reg4b:inst2|register:inst|BUSMUX:inst2
+ 16. Parameter Settings for User Entity Instance: register_file:inst4|reg4b:inst2|register:inst1|BUSMUX:inst2
+ 17. Parameter Settings for User Entity Instance: register_file:inst4|reg4b:inst2|register:inst2|BUSMUX:inst2
+ 18. Parameter Settings for User Entity Instance: register_file:inst4|reg4b:inst2|register:inst3|BUSMUX:inst2
+ 19. Parameter Settings for User Entity Instance: register_file:inst4|reg4b:inst1|register:inst|BUSMUX:inst2
+ 20. Parameter Settings for User Entity Instance: register_file:inst4|reg4b:inst1|register:inst1|BUSMUX:inst2
+ 21. Parameter Settings for User Entity Instance: register_file:inst4|reg4b:inst1|register:inst2|BUSMUX:inst2
+ 22. Parameter Settings for User Entity Instance: register_file:inst4|reg4b:inst1|register:inst3|BUSMUX:inst2
+ 23. Parameter Settings for User Entity Instance: register_file:inst4|reg4b:inst|register:inst|BUSMUX:inst2
+ 24. Parameter Settings for User Entity Instance: register_file:inst4|reg4b:inst|register:inst1|BUSMUX:inst2
+ 25. Parameter Settings for User Entity Instance: register_file:inst4|reg4b:inst|register:inst2|BUSMUX:inst2
+ 26. Parameter Settings for User Entity Instance: register_file:inst4|reg4b:inst|register:inst3|BUSMUX:inst2
+ 27. Post-Synthesis Netlist Statistics for Top Partition
+ 28. Elapsed Time Per Partition
+ 29. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri May  5 23:44:41 2023           ;
+; Quartus Prime Version              ; 21.1.1 Build 850 06/23/2022 SJ Standard Edition ;
+; Revision Name                      ; ELEVATOR                                        ;
+; Top-level Entity Name              ; ELEVATOR                                        ;
+; Family                             ; Cyclone IV E                                    ;
+; Total logic elements               ; 120                                             ;
+;     Total combinational functions  ; 104                                             ;
+;     Dedicated logic registers      ; 45                                              ;
+; Total registers                    ; 45                                              ;
+; Total pins                         ; 52                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; ELEVATOR           ; ELEVATOR           ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 8           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-8         ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                               ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                     ; Library ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------+---------+
+; ELEVATOR.bdf                     ; yes             ; User Block Diagram/Schematic File  ; U:/CPRE281/Final Project/ELEVATOR/ELEVATOR.bdf                   ;         ;
+; clock_divider_1024.bdf           ; yes             ; User Block Diagram/Schematic File  ; U:/CPRE281/Final Project/ELEVATOR/clock_divider_1024.bdf         ;         ;
+; clock_generator.bdf              ; yes             ; User Block Diagram/Schematic File  ; U:/CPRE281/Final Project/ELEVATOR/clock_generator.bdf            ;         ;
+; Decoder2to4.v                    ; yes             ; User Verilog HDL File              ; U:/CPRE281/Final Project/ELEVATOR/Decoder2to4.v                  ;         ;
+; Mux4_4b.v                        ; yes             ; User Verilog HDL File              ; U:/CPRE281/Final Project/ELEVATOR/Mux4_4b.v                      ;         ;
+; next_level.v                     ; yes             ; User Verilog HDL File              ; U:/CPRE281/Final Project/ELEVATOR/next_level.v                   ;         ;
+; out_putt.v                       ; yes             ; User Verilog HDL File              ; U:/CPRE281/Final Project/ELEVATOR/out_putt.v                     ;         ;
+; reg4b.bdf                        ; yes             ; User Block Diagram/Schematic File  ; U:/CPRE281/Final Project/ELEVATOR/reg4b.bdf                      ;         ;
+; register.bdf                     ; yes             ; User Block Diagram/Schematic File  ; U:/CPRE281/Final Project/ELEVATOR/register.bdf                   ;         ;
+; register_file.bdf                ; yes             ; User Block Diagram/Schematic File  ; U:/CPRE281/Final Project/ELEVATOR/register_file.bdf              ;         ;
+; seven_seg_decoder.v              ; yes             ; User Verilog HDL File              ; U:/CPRE281/Final Project/ELEVATOR/seven_seg_decoder.v            ;         ;
+; pri_encoder.v                    ; yes             ; Auto-Found Verilog HDL File        ; U:/CPRE281/Final Project/ELEVATOR/pri_encoder.v                  ;         ;
+; busmux.tdf                       ; yes             ; Megafunction                       ; c:/intelfpga/21.1/quartus/libraries/megafunctions/busmux.tdf     ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                       ; c:/intelfpga/21.1/quartus/libraries/megafunctions/lpm_mux.inc    ;         ;
+; lpm_mux.tdf                      ; yes             ; Megafunction                       ; c:/intelfpga/21.1/quartus/libraries/megafunctions/lpm_mux.tdf    ;         ;
+; aglobal211.inc                   ; yes             ; Megafunction                       ; c:/intelfpga/21.1/quartus/libraries/megafunctions/aglobal211.inc ;         ;
+; muxlut.inc                       ; yes             ; Megafunction                       ; c:/intelfpga/21.1/quartus/libraries/megafunctions/muxlut.inc     ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                       ; c:/intelfpga/21.1/quartus/libraries/megafunctions/bypassff.inc   ;         ;
+; altshift.inc                     ; yes             ; Megafunction                       ; c:/intelfpga/21.1/quartus/libraries/megafunctions/altshift.inc   ;         ;
+; db/mux_8rc.tdf                   ; yes             ; Auto-Generated Megafunction        ; U:/CPRE281/Final Project/ELEVATOR/db/mux_8rc.tdf                 ;         ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 120   ;
+;                                             ;       ;
+; Total combinational functions               ; 104   ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 49    ;
+;     -- 3 input functions                    ; 43    ;
+;     -- <=2 input functions                  ; 12    ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 104   ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 45    ;
+;     -- Dedicated logic registers            ; 45    ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 52    ;
+;                                             ;       ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+;                                             ;       ;
+; Maximum fan-out node                        ; inst1 ;
+; Maximum fan-out                             ; 38    ;
+; Total fan-out                               ; 556   ;
+; Average fan-out                             ; 2.20  ;
++---------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                         ;
++----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------+--------------------+--------------+
+; Compilation Hierarchy Node       ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                       ; Entity Name        ; Library Name ;
++----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------+--------------------+--------------+
+; |ELEVATOR                        ; 104 (0)             ; 45 (2)                    ; 0           ; 0            ; 0       ; 0         ; 52   ; 0            ; |ELEVATOR                                                 ; ELEVATOR           ; work         ;
+;    |Pri_Encoder:inst6|           ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ELEVATOR|Pri_Encoder:inst6                               ; Pri_Encoder        ; work         ;
+;    |clock_generator:inst80|      ; 34 (8)              ; 27 (7)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ELEVATOR|clock_generator:inst80                          ; clock_generator    ; work         ;
+;       |clock_divider_1024:inst8| ; 13 (13)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ELEVATOR|clock_generator:inst80|clock_divider_1024:inst8 ; clock_divider_1024 ; work         ;
+;       |clock_divider_1024:inst|  ; 13 (13)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ELEVATOR|clock_generator:inst80|clock_divider_1024:inst  ; clock_divider_1024 ; work         ;
+;    |next_level:inst3|            ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ELEVATOR|next_level:inst3                                ; next_level         ; work         ;
+;    |out_put:inst2|               ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ELEVATOR|out_put:inst2                                   ; out_put            ; work         ;
+;    |register_file:inst4|         ; 20 (0)              ; 16 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ELEVATOR|register_file:inst4                             ; register_file      ; work         ;
+;       |Decoder2to4:inst6|        ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ELEVATOR|register_file:inst4|Decoder2to4:inst6           ; Decoder2to4        ; work         ;
+;       |Mux4_4b:inst4|            ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ELEVATOR|register_file:inst4|Mux4_4b:inst4               ; Mux4_4b            ; work         ;
+;       |Mux4_4b:inst5|            ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ELEVATOR|register_file:inst4|Mux4_4b:inst5               ; Mux4_4b            ; work         ;
+;       |reg4b:inst1|              ; 0 (0)               ; 4 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ELEVATOR|register_file:inst4|reg4b:inst1                 ; reg4b              ; work         ;
+;          |register:inst1|        ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ELEVATOR|register_file:inst4|reg4b:inst1|register:inst1  ; register           ; work         ;
+;          |register:inst2|        ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ELEVATOR|register_file:inst4|reg4b:inst1|register:inst2  ; register           ; work         ;
+;          |register:inst3|        ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ELEVATOR|register_file:inst4|reg4b:inst1|register:inst3  ; register           ; work         ;
+;          |register:inst|         ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ELEVATOR|register_file:inst4|reg4b:inst1|register:inst   ; register           ; work         ;
+;       |reg4b:inst2|              ; 0 (0)               ; 4 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ELEVATOR|register_file:inst4|reg4b:inst2                 ; reg4b              ; work         ;
+;          |register:inst1|        ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ELEVATOR|register_file:inst4|reg4b:inst2|register:inst1  ; register           ; work         ;
+;          |register:inst2|        ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ELEVATOR|register_file:inst4|reg4b:inst2|register:inst2  ; register           ; work         ;
+;          |register:inst3|        ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ELEVATOR|register_file:inst4|reg4b:inst2|register:inst3  ; register           ; work         ;
+;          |register:inst|         ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ELEVATOR|register_file:inst4|reg4b:inst2|register:inst   ; register           ; work         ;
+;       |reg4b:inst3|              ; 0 (0)               ; 4 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ELEVATOR|register_file:inst4|reg4b:inst3                 ; reg4b              ; work         ;
+;          |register:inst1|        ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ELEVATOR|register_file:inst4|reg4b:inst3|register:inst1  ; register           ; work         ;
+;          |register:inst2|        ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ELEVATOR|register_file:inst4|reg4b:inst3|register:inst2  ; register           ; work         ;
+;          |register:inst3|        ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ELEVATOR|register_file:inst4|reg4b:inst3|register:inst3  ; register           ; work         ;
+;          |register:inst|         ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ELEVATOR|register_file:inst4|reg4b:inst3|register:inst   ; register           ; work         ;
+;       |reg4b:inst|               ; 0 (0)               ; 4 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ELEVATOR|register_file:inst4|reg4b:inst                  ; reg4b              ; work         ;
+;          |register:inst1|        ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ELEVATOR|register_file:inst4|reg4b:inst|register:inst1   ; register           ; work         ;
+;          |register:inst2|        ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ELEVATOR|register_file:inst4|reg4b:inst|register:inst2   ; register           ; work         ;
+;          |register:inst3|        ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ELEVATOR|register_file:inst4|reg4b:inst|register:inst3   ; register           ; work         ;
+;          |register:inst|         ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ELEVATOR|register_file:inst4|reg4b:inst|register:inst    ; register           ; work         ;
+;    |seven_seg_decoder:inst22|    ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ELEVATOR|seven_seg_decoder:inst22                        ; seven_seg_decoder  ; work         ;
+;    |seven_seg_decoder:inst55|    ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ELEVATOR|seven_seg_decoder:inst55                        ; seven_seg_decoder  ; work         ;
+;    |seven_seg_decoder:inst56|    ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ELEVATOR|seven_seg_decoder:inst56                        ; seven_seg_decoder  ; work         ;
+;    |seven_seg_decoder:inst57|    ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ELEVATOR|seven_seg_decoder:inst57                        ; seven_seg_decoder  ; work         ;
+;    |seven_seg_decoder:inst58|    ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ELEVATOR|seven_seg_decoder:inst58                        ; seven_seg_decoder  ; work         ;
++----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------+--------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                  ;
++----------------------------------------------------+------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal    ; Free of Timing Hazards ;
++----------------------------------------------------+------------------------+------------------------+
+; Pri_Encoder:inst6|X[0]                             ; Pri_Encoder:inst6|Mux2 ; yes                    ;
+; Pri_Encoder:inst6|X[1]                             ; Pri_Encoder:inst6|Mux2 ; yes                    ;
+; Number of user-specified and inferred latches = 2  ;                        ;                        ;
++----------------------------------------------------+------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 45    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 16    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 16    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |ELEVATOR|register_file:inst4|Mux4_4b:inst5|Mux0 ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |ELEVATOR|register_file:inst4|Mux4_4b:inst4|Mux3 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:inst4|reg4b:inst3|register:inst|BUSMUX:inst2 ;
++----------------+-------+--------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                           ;
++----------------+-------+--------------------------------------------------------------------------------+
+; WIDTH          ; 1     ; Untyped                                                                        ;
++----------------+-------+--------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:inst4|reg4b:inst3|register:inst1|BUSMUX:inst2 ;
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; WIDTH          ; 1     ; Untyped                                                                         ;
++----------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:inst4|reg4b:inst3|register:inst2|BUSMUX:inst2 ;
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; WIDTH          ; 1     ; Untyped                                                                         ;
++----------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:inst4|reg4b:inst3|register:inst3|BUSMUX:inst2 ;
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; WIDTH          ; 1     ; Untyped                                                                         ;
++----------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:inst4|reg4b:inst2|register:inst|BUSMUX:inst2 ;
++----------------+-------+--------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                           ;
++----------------+-------+--------------------------------------------------------------------------------+
+; WIDTH          ; 1     ; Untyped                                                                        ;
++----------------+-------+--------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:inst4|reg4b:inst2|register:inst1|BUSMUX:inst2 ;
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; WIDTH          ; 1     ; Untyped                                                                         ;
++----------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:inst4|reg4b:inst2|register:inst2|BUSMUX:inst2 ;
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; WIDTH          ; 1     ; Untyped                                                                         ;
++----------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:inst4|reg4b:inst2|register:inst3|BUSMUX:inst2 ;
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; WIDTH          ; 1     ; Untyped                                                                         ;
++----------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:inst4|reg4b:inst1|register:inst|BUSMUX:inst2 ;
++----------------+-------+--------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                           ;
++----------------+-------+--------------------------------------------------------------------------------+
+; WIDTH          ; 1     ; Untyped                                                                        ;
++----------------+-------+--------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:inst4|reg4b:inst1|register:inst1|BUSMUX:inst2 ;
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; WIDTH          ; 1     ; Untyped                                                                         ;
++----------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:inst4|reg4b:inst1|register:inst2|BUSMUX:inst2 ;
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; WIDTH          ; 1     ; Untyped                                                                         ;
++----------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:inst4|reg4b:inst1|register:inst3|BUSMUX:inst2 ;
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; WIDTH          ; 1     ; Untyped                                                                         ;
++----------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:inst4|reg4b:inst|register:inst|BUSMUX:inst2 ;
++----------------+-------+-------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------+
+; WIDTH          ; 1     ; Untyped                                                                       ;
++----------------+-------+-------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:inst4|reg4b:inst|register:inst1|BUSMUX:inst2 ;
++----------------+-------+--------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                           ;
++----------------+-------+--------------------------------------------------------------------------------+
+; WIDTH          ; 1     ; Untyped                                                                        ;
++----------------+-------+--------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:inst4|reg4b:inst|register:inst2|BUSMUX:inst2 ;
++----------------+-------+--------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                           ;
++----------------+-------+--------------------------------------------------------------------------------+
+; WIDTH          ; 1     ; Untyped                                                                        ;
++----------------+-------+--------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:inst4|reg4b:inst|register:inst3|BUSMUX:inst2 ;
++----------------+-------+--------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                           ;
++----------------+-------+--------------------------------------------------------------------------------+
+; WIDTH          ; 1     ; Untyped                                                                        ;
++----------------+-------+--------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 52                          ;
+; cycloneiii_ff         ; 45                          ;
+;     ENA CLR           ; 16                          ;
+;     plain             ; 29                          ;
+; cycloneiii_lcell_comb ; 105                         ;
+;     normal            ; 105                         ;
+;         1 data inputs ; 4                           ;
+;         2 data inputs ; 9                           ;
+;         3 data inputs ; 43                          ;
+;         4 data inputs ; 49                          ;
+;                       ;                             ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 2.68                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 21.1.1 Build 850 06/23/2022 SJ Standard Edition
+    Info: Processing started: Fri May  5 23:44:31 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Elevator -c ELEVATOR
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file elevator.bdf
+    Info (12023): Found entity 1: ELEVATOR
+Info (12021): Found 1 design units, including 1 entities, in source file clock_divider_1024.bdf
+    Info (12023): Found entity 1: clock_divider_1024
+Info (12021): Found 1 design units, including 1 entities, in source file clock_generator.bdf
+    Info (12023): Found entity 1: clock_generator
+Info (12021): Found 1 design units, including 1 entities, in source file decoder2to4.v
+    Info (12023): Found entity 1: Decoder2to4 File: U:/CPRE281/Final Project/ELEVATOR/Decoder2to4.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux4_4b.v
+    Info (12023): Found entity 1: Mux4_4b File: U:/CPRE281/Final Project/ELEVATOR/Mux4_4b.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file next_level.v
+    Info (12023): Found entity 1: next_level File: U:/CPRE281/Final Project/ELEVATOR/next_level.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file out_putt.v
+    Info (12023): Found entity 1: out_put File: U:/CPRE281/Final Project/ELEVATOR/out_putt.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file reg4b.bdf
+    Info (12023): Found entity 1: reg4b
+Info (12021): Found 1 design units, including 1 entities, in source file register.bdf
+    Info (12023): Found entity 1: register
+Info (12021): Found 1 design units, including 1 entities, in source file register_file.bdf
+    Info (12023): Found entity 1: register_file
+Info (12021): Found 1 design units, including 1 entities, in source file seven_seg_decoder.v
+    Info (12023): Found entity 1: seven_seg_decoder File: U:/CPRE281/Final Project/ELEVATOR/seven_seg_decoder.v Line: 1
+Info (12127): Elaborating entity "ELEVATOR" for the top level hierarchy
+Info (12128): Elaborating entity "out_put" for hierarchy "out_put:inst2"
+Warning (12125): Using design file pri_encoder.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: pri_Encoder File: U:/CPRE281/Final Project/ELEVATOR/pri_encoder.v Line: 1
+Info (12128): Elaborating entity "Pri_Encoder" for hierarchy "Pri_Encoder:inst6"
+Warning (10270): Verilog HDL Case Statement warning at pri_encoder.v(9): incomplete case statement has no default case item File: U:/CPRE281/Final Project/ELEVATOR/pri_encoder.v Line: 9
+Warning (10240): Verilog HDL Always Construct warning at pri_encoder.v(6): inferring latch(es) for variable "X", which holds its previous value in one or more paths through the always construct File: U:/CPRE281/Final Project/ELEVATOR/pri_encoder.v Line: 6
+Info (10041): Inferred latch for "X[0]" at pri_encoder.v(6) File: U:/CPRE281/Final Project/ELEVATOR/pri_encoder.v Line: 6
+Info (10041): Inferred latch for "X[1]" at pri_encoder.v(6) File: U:/CPRE281/Final Project/ELEVATOR/pri_encoder.v Line: 6
+Info (12128): Elaborating entity "clock_generator" for hierarchy "clock_generator:inst80"
+Info (12128): Elaborating entity "clock_divider_1024" for hierarchy "clock_generator:inst80|clock_divider_1024:inst8"
+Info (12128): Elaborating entity "next_level" for hierarchy "next_level:inst3"
+Info (12128): Elaborating entity "seven_seg_decoder" for hierarchy "seven_seg_decoder:inst55"
+Info (12128): Elaborating entity "register_file" for hierarchy "register_file:inst4"
+Warning (275080): Converted elements in bus name "DATAP" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "DATAP[3]" to "DATAP3"
+    Warning (275081): Converted element name(s) from "DATAP[1]" to "DATAP1"
+    Warning (275081): Converted element name(s) from "DATAP[2]" to "DATAP2"
+    Warning (275081): Converted element name(s) from "DATAP[0]" to "DATAP0"
+    Warning (275081): Converted element name(s) from "DATAP[3..0]" to "DATAP3..0"
+Warning (275080): Converted elements in bus name "DATAQ" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "DATAQ[3..0]" to "DATAQ3..0"
+    Warning (275081): Converted element name(s) from "DATAQ[0]" to "DATAQ0"
+    Warning (275081): Converted element name(s) from "DATAQ[1]" to "DATAQ1"
+    Warning (275081): Converted element name(s) from "DATAQ[2]" to "DATAQ2"
+    Warning (275081): Converted element name(s) from "DATAQ[3]" to "DATAQ3"
+Info (12128): Elaborating entity "Mux4_4b" for hierarchy "register_file:inst4|Mux4_4b:inst4"
+Info (12128): Elaborating entity "reg4b" for hierarchy "register_file:inst4|reg4b:inst3"
+Info (12128): Elaborating entity "register" for hierarchy "register_file:inst4|reg4b:inst3|register:inst"
+Info (12128): Elaborating entity "BUSMUX" for hierarchy "register_file:inst4|reg4b:inst3|register:inst|BUSMUX:inst2"
+Info (12130): Elaborated megafunction instantiation "register_file:inst4|reg4b:inst3|register:inst|BUSMUX:inst2"
+Info (12133): Instantiated megafunction "register_file:inst4|reg4b:inst3|register:inst|BUSMUX:inst2" with the following parameter:
+    Info (12134): Parameter "WIDTH" = "1"
+Info (12128): Elaborating entity "lpm_mux" for hierarchy "register_file:inst4|reg4b:inst3|register:inst|BUSMUX:inst2|lpm_mux:$00000" File: c:/intelfpga/21.1/quartus/libraries/megafunctions/busmux.tdf Line: 44
+Info (12131): Elaborated megafunction instantiation "register_file:inst4|reg4b:inst3|register:inst|BUSMUX:inst2|lpm_mux:$00000", which is child of megafunction instantiation "register_file:inst4|reg4b:inst3|register:inst|BUSMUX:inst2" File: c:/intelfpga/21.1/quartus/libraries/megafunctions/busmux.tdf Line: 44
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_8rc.tdf
+    Info (12023): Found entity 1: mux_8rc File: U:/CPRE281/Final Project/ELEVATOR/db/mux_8rc.tdf Line: 23
+Info (12128): Elaborating entity "mux_8rc" for hierarchy "register_file:inst4|reg4b:inst3|register:inst|BUSMUX:inst2|lpm_mux:$00000|mux_8rc:auto_generated" File: c:/intelfpga/21.1/quartus/libraries/megafunctions/lpm_mux.tdf Line: 87
+Info (12128): Elaborating entity "Decoder2to4" for hierarchy "register_file:inst4|Decoder2to4:inst6"
+Warning (13012): Latch Pri_Encoder:inst6|X[0] has unsafe behavior File: U:/CPRE281/Final Project/ELEVATOR/pri_encoder.v Line: 6
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Y[3]
+Warning (13012): Latch Pri_Encoder:inst6|X[1] has unsafe behavior File: U:/CPRE281/Final Project/ELEVATOR/pri_encoder.v Line: 6
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Y[3]
+Info (286030): Timing-Driven Synthesis is running
+Warning (20013): Ignored 24 assignments for entity "elavator" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity elavator -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity elavator -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity elavator -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_PRESERVE_HIGH_SPEED_TILES ON -entity elavator -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IGNORE_SOURCE_FILE_CHANGES OFF -entity elavator -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ALWAYS_USE_QXP_NETLIST OFF -entity elavator -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_COLOR 16764057 -entity elavator -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_ASSIGNMENTS ON -entity elavator -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_ASSIGNMENTS REPLACE_CONFLICTING -entity elavator -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS UPDATE_CONFLICTING -entity elavator -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PIN_ASSIGNMENTS ON -entity elavator -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PROMOTE_ASSIGNMENTS ON -entity elavator -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_TYPE STANDARD_PARTITION -entity elavator -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ALLOW_MULTIPLE_PERSONAS OFF -entity elavator -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ASD_REGION_ID 1 -entity elavator -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name CROSS_BOUNDARY_OPTIMIZATIONS OFF -entity elavator -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_CONSTANTS_ON_INPUTS ON -entity elavator -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_INVERSIONS_ON_INPUTS ON -entity elavator -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name REMOVE_LOGIC_ON_UNCONNECTED_OUTPUTS ON -entity elavator -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_INPUTS ON -entity elavator -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_BIDIRS ON -entity elavator -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS ON -entity elavator -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_EXTRACT_HARD_BLOCK_NODES ON -entity elavator -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity elavator -section_id Top was ignored
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 172 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 16 input pins
+    Info (21059): Implemented 36 output pins
+    Info (21061): Implemented 120 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 45 warnings
+    Info: Peak virtual memory: 4819 megabytes
+    Info: Processing ended: Fri May  5 23:44:41 2023
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:18
+
+
