@@ -1,0 +1,17 @@
+
+temp.h,482
+# define TEMP_H2,15
+std::vector<std::vector<char>> maskboard 11,101
+#define PLAYER1_PAWN 24,551
+#define PLAYER1_ROOK 25,586
+#define PLAYER1_KNIGHT 26,619
+#define PLAYER1_BISHOP 27,652
+#define PLAYER1_QUEEN 28,685
+#define PLAYER1_KING 29,718
+#define PLAYER2_PAWN 31,752
+#define PLAYER2_ROOK 32,785
+#define PLAYER2_KNIGHT 33,818
+#define PLAYER2_BISHOP 34,851
+#define PLAYER2_QUEEN 35,884
+#define PLAYER2_KING 36,917
+    std::vector<std::vector<char>> chessboard 39,952
