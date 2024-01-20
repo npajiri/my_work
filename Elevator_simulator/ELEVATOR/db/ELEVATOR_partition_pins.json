@@ -1,0 +1,217 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "Arrived",
+					"strict" : false
+				},
+				{
+					"name" : "pin_name1",
+					"strict" : false
+				},
+				{
+					"name" : "pin_name2",
+					"strict" : false
+				},
+				{
+					"name" : "pin_name3",
+					"strict" : false
+				},
+				{
+					"name" : "pin_name4",
+					"strict" : false
+				},
+				{
+					"name" : "pin_name5",
+					"strict" : false
+				},
+				{
+					"name" : "pin_name6",
+					"strict" : false
+				},
+				{
+					"name" : "pin_name7",
+					"strict" : false
+				},
+				{
+					"name" : "pin_name8",
+					"strict" : false
+				},
+				{
+					"name" : "pin_name9",
+					"strict" : false
+				},
+				{
+					"name" : "pin_name10",
+					"strict" : false
+				},
+				{
+					"name" : "pin_name11",
+					"strict" : false
+				},
+				{
+					"name" : "pin_name12",
+					"strict" : false
+				},
+				{
+					"name" : "pin_name13",
+					"strict" : false
+				},
+				{
+					"name" : "pin_name14",
+					"strict" : false
+				},
+				{
+					"name" : "pin_name15",
+					"strict" : false
+				},
+				{
+					"name" : "pin_name16",
+					"strict" : false
+				},
+				{
+					"name" : "pin_name17",
+					"strict" : false
+				},
+				{
+					"name" : "pin_name18",
+					"strict" : false
+				},
+				{
+					"name" : "pin_name19",
+					"strict" : false
+				},
+				{
+					"name" : "pin_name20",
+					"strict" : false
+				},
+				{
+					"name" : "pin_name21",
+					"strict" : false
+				},
+				{
+					"name" : "pin_name22",
+					"strict" : false
+				},
+				{
+					"name" : "pin_name23",
+					"strict" : false
+				},
+				{
+					"name" : "pin_name24",
+					"strict" : false
+				},
+				{
+					"name" : "pin_name25",
+					"strict" : false
+				},
+				{
+					"name" : "pin_name26",
+					"strict" : false
+				},
+				{
+					"name" : "pin_name27",
+					"strict" : false
+				},
+				{
+					"name" : "pin_name28",
+					"strict" : false
+				},
+				{
+					"name" : "pin_name29",
+					"strict" : false
+				},
+				{
+					"name" : "pin_name30",
+					"strict" : false
+				},
+				{
+					"name" : "pin_name31",
+					"strict" : false
+				},
+				{
+					"name" : "pin_name32",
+					"strict" : false
+				},
+				{
+					"name" : "pin_name33",
+					"strict" : false
+				},
+				{
+					"name" : "pin_name34",
+					"strict" : false
+				},
+				{
+					"name" : "pin_name35",
+					"strict" : false
+				},
+				{
+					"name" : "Read_AddressX1",
+					"strict" : false
+				},
+				{
+					"name" : "Read_AdressX0",
+					"strict" : false
+				},
+				{
+					"name" : "Y[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Y[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Y[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Y[0]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Regiser_clock",
+					"strict" : false
+				},
+				{
+					"name" : "Clear_All",
+					"strict" : false
+				},
+				{
+					"name" : "Adress_DataX0",
+					"strict" : false
+				},
+				{
+					"name" : "EnableW",
+					"strict" : false
+				},
+				{
+					"name" : "Adress_DataX1",
+					"strict" : false
+				},
+				{
+					"name" : "DATA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Clock",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
