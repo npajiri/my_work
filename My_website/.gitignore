@@ -1,0 +1,5 @@
+# Secret environment variables
+.env
+
+# Also good to ignore for all OS
+.DS_Store
