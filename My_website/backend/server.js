@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const path = require("path");
 
 require("dotenv").config(); // Load environment variables
 
@@ -19,6 +20,20 @@ app.get("/", (req, res) => {
 });
 
 app.use("/portfolio-info", portfolioInfoRouter); // Use the portfolioInfo router for handling requests to /portfolioInfo
+
+app.get("/download-resume", (req, res) => {
+  const filePath = path.join(
+    __dirname,
+    "public",
+    "Nnamdi Resume(2025)-Fulltime.pdf"
+  ); // Adjust the path to your resume file
+  res.download(filePath, "Nnamdi_Ajiri_Resume.pdf", (err) => {
+    if (err) {
+      console.error("Error downloading the file:", err);
+      res.status(500).send("Error downloading the file.");
+    }
+  });
+});
 
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri);

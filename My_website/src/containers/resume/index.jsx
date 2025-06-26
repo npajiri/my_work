@@ -73,10 +73,7 @@ const Resume = () => {
             ))}
           </VerticalTimeline>
           <div className="resume-link">
-            <a
-              href="https://github.com/npajiri/my_work/blob/main/Nnamdi%20Resume(2025)-Fulltime.pdf"
-              target="_blank"
-            >
+            <a href="http://localhost:5000/download-resume" target="_blank">
               <button>Get full Resume</button>
             </a>{" "}
           </div>
